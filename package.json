@@ -1,10 +1,10 @@
 {
   "name": "home",
   "author": "Yovvis",
-  "github": "https://github.com/yovvis/quick-home",
+  "github": "https://github.com/yovvis",
   "home": "https://yovvis.top",
   "private": true,
-  "version": "4.1.4",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
