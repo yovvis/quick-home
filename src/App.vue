@@ -79,11 +79,11 @@ onMounted(() => {
   cursorInit();
 
   // 禁用F12
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "F12") {
-      e.preventDefault();
-    }
-  });
+  // document.addEventListener("keydown", function (e) {
+  //   if (e.key === "F12") {
+  //     e.preventDefault();
+  //   }
+  // });
 
   // 屏蔽右键
   document.oncontextmenu = () => {
