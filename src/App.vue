@@ -81,6 +81,11 @@ onMounted(() => {
   // 禁用F12
   // document.addEventListener("keydown", function (e) {
   //   if (e.key === "F12") {
+  //     ElMessage({
+  //       message: "为了浏览体验，本站禁用F12",
+  //       grouping: true,
+  //       duration: 2000,
+  //     });
   //     e.preventDefault();
   //   }
   // });
