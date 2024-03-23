@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "Cloud",
+    "name": "网盘",
+    "link": ""
+  },
+  {
+    "icon": "CompactDisc",
+    "name": "音乐",
+    "link": ""
+  },
+  {
+    "icon": "Compass",
+    "name": "起始页",
+    "link": ""
+  },
+  {
+    "icon": "Fire",
+    "name": "今日热榜",
+    "link": ""
+  },
+  {
+    "icon": "LaptopCode",
+    "name": "站点监测",
+    "link": "https://www.xicons.org"
+  }
+]

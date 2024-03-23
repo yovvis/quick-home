@@ -5,33 +5,23 @@
     "link": "https://blog.yovvis.top"
   },
   {
-    "icon": "Cloud",
-    "name": "网盘",
-    "link": "https://blog.yovvis.top"
+    "icon": "Paw",
+    "name": "我的日常",
+    "link": "https://blog.yovvis.top/moments"
   },
   {
-    "icon": "CompactDisc",
-    "name": "音乐",
-    "link": "https://blog.yovvis.top"
+    "icon": "CircleNotch",
+    "name": "朋友圈",
+    "link": "https://blog.yovvis.top/friends"
   },
   {
-    "icon": "Compass",
-    "name": "起始页",
-    "link": ""
+    "icon": "PhotoVideo",
+    "name": "照片集",
+    "link": "https://blog.yovvis.top/photos"
   },
   {
-    "icon": "Book",
-    "name": "网址集",
-    "link": ""
-  },
-  {
-    "icon": "Fire",
-    "name": "今日热榜",
-    "link": ""
-  },
-  {
-    "icon": "LaptopCode",
-    "name": "站点监测",
-    "link": ""
+    "icon": "UserFriends",
+    "name": "邻居们",
+    "link": "https://blog.yovvis.top/links"
   }
 ]
