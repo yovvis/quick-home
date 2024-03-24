@@ -154,4 +154,4 @@ if (type == 0) {
 - [IconPark](https://iconpark.oceanengine.com/official)
 - [xicons](https://xicons.org/)
 - [Aplayer](https://aplayer.js.org/)
-- [home](https://github.com/imsyy/home)
+- [home 原作者](https://github.com/imsyy/home)
