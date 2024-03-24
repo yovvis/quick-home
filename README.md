@@ -17,39 +17,30 @@
 
 ### 手动部署
 
-* **安装** [node.js](https://nodejs.org/zh-cn/) **环境**
+- **安装** [node.js](https://nodejs.org/zh-cn/) **环境**
 
-  > node > 16.16.0  
-  > npm > 8.15.0
-  
-* 然后以 **管理员权限** 运行 `cmd` 终端，并 `cd` 到 项目根目录
-* 在 `终端` 中输入：
+  > node > 18.16.0
+  >
+  > npm > 9.5.1
+
+- 然后以 **管理员权限** 运行 `cmd` 终端，并 `cd` 到 项目根目录
+- 在 `终端` 中输入：
 
 ```bash
-# 安装 pnpm
-npm install -g pnpm
+# 安装 yarn
+npm install -g yarn
 
 # 安装依赖
-pnpm install
+yarn
 
 # 预览
-pnpm dev
+yarn run dev
 
 # 构建
-pnpm build
+yarn run build
 ```
+
 > 构建完成后，静态资源会在 **`dist` 目录** 中生成，可将 **`dist` 文件夹下的文件**上传至服务器，也可使用 `Vercel` 等托管平台一键导入并自动部署
-
-### Docker 部署
-
-> 安装及配置 Docker 将不在此处说明，请自行解决
-
-```bash
-# 构建
-docker build -t home .
-# 运行
-docker run -p 12445:12445 -d home
-```
 
 ### 网站链接
 
@@ -57,9 +48,9 @@ docker run -p 12445:12445 -d home
 
 ```json
 {
-  "icon": "Blog",						
-  "name": "博客",						
-  "link": "https://blog.yovvis.top/"	
+  "icon": "Blog",
+  "name": "博客",
+  "link": "https://blog.yovvis.top/"
 },
 ```
 
@@ -77,6 +68,10 @@ import {
   Book,
   Fire,
   LaptopCode,
+  UserFriends,
+  PhotoVideo,
+  Paw,
+  CircleNotch
 } from "@vicons/fa";
 
 ...
@@ -90,6 +85,10 @@ const siteIcon = {
   Book,
   Fire,
   LaptopCode,
+  UserFriends,
+  PhotoVideo,
+  Paw,
+  CircleNotch
 };
 ```
 
@@ -103,9 +102,6 @@ const siteIcon = {
 
 - 前往 [高德开放平台控制台](https://console.amap.com/dev/index) 创建一个 `Web 服务` 类型的 `Key`，并将 `Key` 填入 `.env` 中的 `VITE_WEATHER_KEY` 中
 
-也可自行更换其他方式
-
-
 ### 音乐
 
 请在 `.env` 文件中更改歌曲相关参数即可实现自定义歌单列表
@@ -118,12 +114,8 @@ VITE_SONG_SERVER = "netease"
 # 播放类型 ( song-歌曲, playlist-播放列表, album-专辑, search-搜索, artist-艺术家 )
 VITE_SONG_TYPE = "playlist"
 # 播放 ID
-VITE_SONG_ID = "7452421335"
+VITE_SONG_ID = "714218712"
 ```
-
-- 最终可对原字体进行缓加载，**先行加载压缩后的字体**
-
->详细信息可前往 [虹墨空间站](https://www.imaegoo.com/2020/chinese-font-compress/) 查看原文
 
 </details>
 
@@ -136,12 +128,9 @@ VITE_SONG_ID = "7452421335"
 如果想要添加更多的本地图片作为网站背景，可以将图片重命名 `background+数字` 的形式，并在 `src/components/Background/index.vue` 中进行修改：
 
 ```js
-
 if (type == 0) {
   // 修改此处 Math.random() 后面的第一个数字为图片的数量
-  bgUrl.value = `/images/background${Math.floor(
-    Math.random() * 10 + 1
-  )}.webp`;
+  bgUrl.value = `/images/background${Math.floor(Math.random() * 10 + 1)}.webp`;
 }
 ```
 
@@ -149,19 +138,20 @@ if (type == 0) {
 
 可以在 `public/images/icon` 中修改网站图标。
 
-### 技术栈
-
-* [Vue](https://cn.vuejs.org/)
-* [Vite](https://vitejs.cn/vite3-cn/)
-* [Pinia](https://pinia.vuejs.org/zh/)
-* [IconPark](https://iconpark.oceanengine.com/official)
-* [xicons](https://xicons.org/)
-* [Aplayer](https://aplayer.js.org/)
-
 ### API
 
-* [小歪 API](https://api.aixiaowai.cn)
-* [搏天 API](https://api.btstu.cn/doc/sjbz.php)
-* [教书先生 API](https://api.oioweb.cn/doc/weather/GetWeather)
-* [高德开放平台](https://lbs.amap.com/)
-* [Hitokoto 一言](https://hitokoto.cn/)
+- [小歪 API](https://api.aixiaowai.cn)
+- [搏天 API](https://api.btstu.cn/doc/sjbz.php)
+- [教书先生 API](https://api.oioweb.cn/doc/weather/GetWeather)
+- [高德开放平台](https://lbs.amap.com/)
+- [Hitokoto 一言](https://hitokoto.cn/)
+
+### 鸣谢
+
+- [Vue](https://cn.vuejs.org/)
+- [Vite](https://vitejs.cn/vite3-cn/)
+- [Pinia](https://pinia.vuejs.org/zh/)
+- [IconPark](https://iconpark.oceanengine.com/official)
+- [xicons](https://xicons.org/)
+- [Aplayer](https://aplayer.js.org/)
+- [home](https://github.com/imsyy/home)
