@@ -89,6 +89,7 @@ export const mainStore = defineStore("main", {
       "playerAutoplay",
       "playerLoop",
       "playerOrder",
+      "showadvers",
     ],
   },
 });
