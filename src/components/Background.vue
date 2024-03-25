@@ -1,4 +1,5 @@
 <template>
+  <AdverCard v-show="store.showadvers" :adverList="adverList"></AdverCard>
   <div :class="store.backgroundShow ? 'cover show' : 'cover'">
     <img
       v-show="store.imgLoadStatus"
@@ -26,12 +27,24 @@
 <script setup>
 import { mainStore } from "@/store";
 import { Error } from "@icon-park/vue-next";
-
+import adveretisements from "@/assets/advertisements.json";
+import { computed } from "vue";
 const store = mainStore();
 const bgUrl = ref(null);
 const imgTimeout = ref(null);
 const emit = defineEmits(["loadComplete"]);
 
+// 是否开启广告位
+const adverList = computed(() => {
+  const adveretisemented = adveretisements.filter((item) => {
+    return item.link !== "";
+  });
+  const result = [];
+  for (let i = 0; i < adveretisemented.length; i++) {
+    result.push(adveretisemented[i]);
+  }
+  return result;
+});
 // 壁纸随机数
 // 请依据文件夹内的图片个数修改 Math.random() 后面的第一个数字
 const bgRandom = Math.floor(Math.random() * 9 + 1);

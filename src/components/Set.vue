@@ -48,6 +48,15 @@
             :inactive-icon="CloseSmall"
           />
         </div>
+        <div class="item">
+          <span class="text">是否开启广告</span>
+          <el-switch
+            v-model="showadvers"
+            inline-prompt
+            :active-icon="CheckSmall"
+            :inactive-icon="CloseSmall"
+          />
+        </div>
       </el-collapse-item>
       <el-collapse-item title="播放器配置" name="3">
         <div class="item">
@@ -101,6 +110,7 @@ const {
   playerAutoplay,
   playerOrder,
   playerLoop,
+  showadvers,
 } = storeToRefs(store);
 
 // 默认选中项

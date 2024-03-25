@@ -1,0 +1,88 @@
+<template>
+  <div class="adver-float" @click="navigateToUrl(currentAd.url)" v-if="adverList.length > 0">
+    <div class="adver-content">
+      <div class="adver-img" :style="{ backgroundImage: 'url(' + currentAd.img + ')' }"></div>
+      <div class="adver-name">{{ currentAd.name }}</div>
+    </div>
+  </div>
+</template>
+<script setup>
+import { ref, computed, onMounted, watch, onUnmounted } from "vue";
+
+const { adverList } = defineProps({
+  adverList: {
+    type: Array,
+    required: true,
+  },
+});
+const currentIndex = ref(0);
+const currentAd = computed(() => adverList[currentIndex.value]);
+// 广告链接
+const navigateToUrl = (url) => {
+  window.open(url, "_blank");
+};
+
+onMounted(() => {
+  const adChangeInterval = setTimeout(() => {
+    currentIndex.value = currentIndex.value < adverList.length - 1 ? currentIndex.value + 1 : 0;
+  }, 5000);
+  watch(
+    () => adverList,
+    () => {
+      currentIndex.value = 0;
+    },
+  );
+  onUnmounted(() => {
+    clearInterval(adChangeInterval);
+  });
+});
+</script>
+<style lang="scss" scoped>
+.adver-float {
+  position: fixed;
+  bottom: 0px;
+  left: 15px;
+  width: 260px;
+  height: 165px;
+  cursor: pointer;
+  animation: floatAnimation 5s infinite;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* 添加 z-index 属性确保组件位于顶层 */
+  z-index: 1;
+}
+
+.adver-content {
+  width: 100%;
+  height: 100%;
+}
+
+.adver-name {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: rgba(252, 198, 0, 0.75);
+  color: white;
+  font-size: 16px;
+}
+
+.adver-img {
+  width: 100%;
+  height: calc(100% - 40px);
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+}
+
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-46px);
+  }
+}
+</style>
