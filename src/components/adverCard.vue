@@ -23,15 +23,19 @@ const navigateToUrl = (url) => {
 };
 
 onMounted(() => {
-  const adChangeInterval = setTimeout(() => {
+  // 启动循环定时器
+  const adChangeInterval = setInterval(() => {
+    // 更新当前索引值，如果已经到达最后一个元素，则重新从头开始
     currentIndex.value = currentIndex.value < adverList.length - 1 ? currentIndex.value + 1 : 0;
   }, 5000);
+  // 监听 adverList 的变化，当 adverList 变化时将 currentIndex 重置为 0
   watch(
     () => adverList,
     () => {
       currentIndex.value = 0;
     },
   );
+  // 在组件卸载时清除定时器
   onUnmounted(() => {
     clearInterval(adChangeInterval);
   });
