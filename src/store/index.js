@@ -25,7 +25,7 @@ export const mainStore = defineStore("main", {
       playerAutoplay: true, // 是否自动播放
       playerLoop: "all", // 循环播放 "all", "one", "none"
       playerOrder: "list", // 循环顺序 "list", "random"
-      showadvers: true, // 是否开启广告
+      showadvers: false, // 是否开启广告
     };
   },
   getters: {
